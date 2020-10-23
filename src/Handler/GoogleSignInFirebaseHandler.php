@@ -64,6 +64,9 @@ class GoogleSignInFirebaseHandler extends \Mobileia\Expressive\Request\MiaReques
         $account = new \Mobileia\Expressive\Auth\Model\MIAUser();
         $account->mia_id = 0;
         $account->firstname = $this->getParam($request, 'firstname', '');
+        if($account->firstname == ''){
+            $account->firstname = 'empty';
+        }
         $account->lastname = $this->getParam($request, 'lastname', '');
         $account->email = $email;
         $account->phone = $this->getParam($request, 'phone', '');

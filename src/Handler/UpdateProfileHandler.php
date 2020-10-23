@@ -26,6 +26,9 @@ class UpdateProfileHandler extends \Mobileia\Expressive\Auth\Request\MiaAuthRequ
         $item = $this->getUser($request);
         // Obtener valores
         $item->firstname = $this->getParam($request, 'firstname', '');
+        if($item->firstname == ''){
+            $item->firstname = 'empty';
+        }
         $item->lastname = $this->getParam($request, 'lastname', '');
         $item->photo = $this->getParam($request, 'photo', '');
         $item->phone = $this->getParam($request, 'phone', '');
