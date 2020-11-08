@@ -48,4 +48,6 @@ $user = $request->getAttribute(\Mobileia\Expressive\Auth\Model\MIAUser::class);
     $app->route('/mia-auth/google-signin', [Mobileia\Expressive\Auth\Handler\GoogleSignInHandler::class], ['GET', 'POST', 'OPTIONS', 'HEAD'], 'mia_auth.google-signin');
     $app->route('/mia-auth/apple-signin', [Mobileia\Expressive\Auth\Handler\AppleSignInHandler::class], ['GET', 'POST', 'OPTIONS', 'HEAD'], 'mia_auth.apple-signin');
     $app->route('/mia-auth/register-device', [\Mobileia\Expressive\Auth\Handler\AuthInternalHandler::class, Mobileia\Expressive\Auth\Handler\RegisterDeviceHandler::class], ['GET', 'POST', 'OPTIONS', 'HEAD'], 'mia_auth.register-device');
+
+    $app->route('/mia-auth/role/list', [Mobileia\Expressive\Auth\Handler\Role\ListHandler::class], ['GET', 'POST', 'OPTIONS', 'HEAD'], 'mia_auth.role-list');
 ```
