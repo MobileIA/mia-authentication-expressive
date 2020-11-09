@@ -17,11 +17,11 @@ class LoginInternalHandler extends \Mobileia\Expressive\Request\MiaRequestHandle
         // Verificar si ya existe la cuenta
         $account = \Mobileia\Expressive\Auth\Model\MIAUser::where('email', $email)->first();
         if($account === null){
-            return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-2, 'Esta cuenta no existe');
+            return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-2, 'This account does not exist');
         }
         // Verificar si la contraseña coincide
         if(!\Mobileia\Expressive\Auth\Model\MIAUser::verifyPassword($password, $account->password)){
-            return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-3, 'La contraseña no es la indicada');
+            return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-3, 'Password is not correct');
         }
         // Generar nuevo AccessToken
         $token = new \Mobileia\Expressive\Auth\Model\MIAAccessToken();
