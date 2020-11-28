@@ -2,6 +2,11 @@
 
 namespace Mobileia\Expressive\Auth\Handler;
 
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
+use Mobileia\Expressive\Diactoros\MiaJsonErrorResponse;
+
 /**
  * Description of AuthInternalOptionalHandler
  *
