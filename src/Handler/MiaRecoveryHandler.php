@@ -18,6 +18,9 @@ class MiaRecoveryHandler extends \Mobileia\Expressive\Request\MiaRequestHandler
         if($account === null){
             return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-1, 'Este email no existe');
         }
+        if($account->deleted == 1){
+            return new \Mobileia\Expressive\Diactoros\MiaJsonErrorResponse(-1, 'This account not exist.');
+        }
         // Generar registro de token
         $token = \Mobileia\Expressive\Auth\Model\MIAUser::encryptPassword($email . '_' . time() . '_' . $email);
         $recovery = new \Mobileia\Expressive\Auth\Model\MIARecovery();
