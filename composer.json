@@ -1,7 +1,7 @@
 {
     "name": "mobileia/mia-authentication-expressive",
     "description": "The library for Zend Expressive 3",
-    "version": "0.0.51",
+    "version": "0.0.52",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [{
